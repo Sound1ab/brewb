@@ -1,0 +1,80 @@
+// variables //
+
+// Layout
+
+// Typography
+// -------------------------
+
+	// family
+	$ffBase: 		'LatoWebBlack', sans-serif;
+	$ffSecondary: 	'LatoWebBlack', sans-serif;
+	$alpha: 		'LatoWebLight', sans-serif;
+	$beta: 			'LatoWebBold', sans-serif;
+	$gamma: 		'LatoWebBold', sans-serif;
+	$delta: 		'LatoWebBold', sans-serif;
+	$epsilon: 		-apple-system, BlinkMacSystemFont,
+                    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+                    "Fira Sans", "Droid Sans", "Helvetica Neue",
+                    sans-serif;
+	$zeta: 			-apple-system, BlinkMacSystemFont,
+                    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+                    "Fira Sans", "Droid Sans", "Helvetica Neue",
+                    sans-serif;
+	$eta: 			-apple-system, BlinkMacSystemFont,
+                    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+                    "Fira Sans", "Droid Sans", "Helvetica Neue",
+                    sans-serif;
+	$theta: 		-apple-system, BlinkMacSystemFont,
+                    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+                    "Fira Sans", "Droid Sans", "Helvetica Neue",
+                    sans-serif;
+
+	// style
+	$fzBase: 			16 !default;
+	$lhBase: 			35 !default;
+	$fwBase: 			300;
+
+// Colours
+	$primaryColour: 	#06020b;
+	$secondaryColour: 	#0c0b0f ;
+	$tertiaryColour: 	#bc622c;
+	$quinaryColour: 	#70bf58;
+
+// Margins
+// -------------------------
+
+	$lMargBottom: 80px;
+	$mMargBottom: 50px;
+	$sMargBottom: 20px;
+
+	$lMargBottomM: 40px;
+	$mMargBottomM: 25px;
+	$sMargBottomM: 10px;
+
+// Generic sizes
+// -------------------------
+	$column: 660px;
+	$mobileContainer: 90%;
+
+// Padding
+// -------------------------
+	$padVert: 50;
+
+// Headings
+// -------------------------
+
+	$headings: 							'.alpha','.beta','.gamma','.delta', '.epsilon', '.zeta', '.eta', 										'.theta';
+	$headingSizes: 					    40,30,26,20,60,40,26,20;
+	$headingFamilies: 					$alpha, $beta, $gamma, $delta, $epsilon, $zeta, $eta, $theta;
+	$headingColors: 					inherit , inherit, inherit, inherit, inherit , inherit, inherit, 										inherit;
+	$headingMargins: 					15,15,15,15,15,15,15,15;
+	$headingLineHeights: 				1.2,1.2,1.2,1.2,1.2,1.2,1.6,1.2;
+	$headingFontWeights: 				400, 500, 500, 500, 700, 700, 400, 700;
+
+// Breaks
+// -------------------------
+	$xs: 320px;
+	$s: 480px;
+	$m: 640px;
+	$l: 960px;
+	$xl: 1200px;

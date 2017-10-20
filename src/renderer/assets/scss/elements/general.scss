@@ -1,0 +1,56 @@
+a {
+	color: $quinaryColour;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+img {
+	//display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+p {
+	margin-bottom: em(30);
+	font-family: $ffBase;
+	font-weight: $fwBase;
+	line-height: $lhBase / $fzBase;
+	@include font-size($fzBase);
+	color: black;
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+	list-style-type: circle;
+	margin-bottom: 1.5em;
+	padding-left: 50px;
+}
+
+textarea,
+input {
+	font-family: $ffBase;
+	font-weight: $fwBase;
+	@include font-size($fzBase);
+	border: 1px solid $tertiaryColour;
+	width: 100%;
+	height: 45px;
+	border-radius: 5px;
+	padding: em(15);
+	&:focus {
+		outline: $quinaryColour auto 5px;
+		border:1px solid $quinaryColour;
+		box-shadow: 0 0 10px $quinaryColour;
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+blockquote {
+	font-style: italic;
+	& > p {
+		color: grey;
+	}
+}

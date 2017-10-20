@@ -1,0 +1,14 @@
+{
+	"navigation": [
+		{
+			"title": "Home",
+			"icon": "navigation/cup.png",
+			"slug": "/"
+		},
+		{
+			"title": "Account",
+			"icon": "navigation/account.png",
+			"slug": "account"
+		}
+	]
+}

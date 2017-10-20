@@ -1,0 +1,104 @@
+// Convert pixels to ems
+// eg. for a relational value of 12px write em(12) when the parent is 16px
+// if the parent is another value say 24px write em(12, 24)
+@function em($pxval, $base: $fzBase) {
+  @return ($pxval / $base) * 1em;
+}
+
+// Font sizing using rems with a fallback to px in unsupported
+// Font-size of 62.5% must be set on body
+@mixin font-size($sizeValue: 16){
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / 10) + rem;
+}
+
+
+/**
+ * Media query
+ */
+@mixin mq($break-max: false, $break-min: false) {
+	@if $break-max == base {
+		@content
+	}
+	@else if $break-max == false {
+		@media (min-width: $break-min) {
+			@content;
+		}
+	} @else if $break-min == false {
+		@media (max-width: $break-max - 1px) {
+			@content;
+		}
+	} @else {
+		@media (min-width: $break-min) and (max-width: $break-max - 1px) {
+			@content;
+		}
+	}
+}
+
+@mixin mqh($break-max) {
+	@media (max-height: $break-max - 1px) {
+		@content;
+	}
+}
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+	@each $property in $properties {
+		#{$property}: $min-value + px;
+	}
+
+	@media screen and (min-width: $min-vw) {
+		@each $property in $properties {
+			#{$property}: calc(#{$min-value + px} + #{strip-unit(($max-value) - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+		}
+	}
+
+	@media screen and (min-width: $max-vw) {
+		@each $property in $properties {
+			#{$property}: $max-value + px;
+		}
+	}
+}
+
+///
+/// Viewport sized typography with minimum and maximum values
+///
+/// @author Eduardo Boucas (@eduardoboucas)
+///
+/// @param {Number}   $responsive  - Viewport-based size
+/// @param {Number}   $min         - Minimum font size (px)
+/// @param {Number}   $max         - Maximum font size (px)
+///                                  (optional)
+/// @param {Number}   $fallback    - Fallback for viewport-
+///                                  based units (optional)
+///
+/// @example scss - 5vw font size (with 50px fallback),
+///                 minumum of 35px and maximum of 150px
+///  @include responsive-font(5vw, 35px, 150px, 50px);
+///
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+	$responsive-unitless: $responsive / ($responsive - $responsive + 1);
+	$dimension: if(unit($responsive) == 'vh', 'height', 'width');
+	$min-breakpoint: $min / $responsive-unitless * 100;
+
+	@media (max-#{$dimension}: #{$min-breakpoint}) {
+		font-size: $min;
+	}
+
+	@if $max {
+		$max-breakpoint: $max / $responsive-unitless * 100;
+
+		@media (min-#{$dimension}: #{$max-breakpoint}) {
+			font-size: $max;
+		}
+	}
+
+	@if $fallback {
+		font-size: $fallback;
+	}
+
+	font-size: $responsive;
+}

@@ -1,0 +1,30 @@
+* {
+	box-sizing: inherit;
+}
+
+*:after,
+*:before {
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+	background-color: $primaryColour;
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	font-family: $ffBase;
+	font-weight: $fwBase;
+	line-height: $lhBase / $fzBase;
+	@include font-size($fzBase);
+	color: white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0 0 0 0;
+	width: 100%;
+	height: 100vh;
+	//padding-left: calc(100vw - 100%)
+}
