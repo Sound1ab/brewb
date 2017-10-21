@@ -4,6 +4,7 @@
 		<heading></heading>
 		<div class="home__content">
 			<pool></pool>
+			<people></people>
 		</div>
 	</div>
 </template>
@@ -12,13 +13,15 @@
 	import Heading from '@/components/header/header';
 	import Navigation from '@/components/navigation/navigation';
 	import Pool from '@/components/pool/pool';
+	import People from '@/components/people/people';
 	export default {
 		name: 'home',
 		props: [''],
 		components: {
 			Heading,
 			Navigation,
-			Pool
+			Pool,
+			People
 		},
 		data () {
 			return {};
@@ -39,9 +42,11 @@
 		flex-direction: column;
 		flex-wrap: wrap;
 		&__content {
-			flex: 1 0 auto;
-			/*width: 100%;*/
-			/*height: calc(100% - 150px);*/
+			flex: 1 0;
+			padding: em(10);
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
 		}
 	}
 </style>

@@ -1,7 +1,7 @@
 <template>
-	<section class="header" v-design-mode>
+	<header class="header" v-design-mode>
 		<h1 class="header__title alpha">Brewb</h1>
-	</section>
+	</header>
 </template>
 
 <script>

@@ -10,5 +10,33 @@
 			"icon": "navigation/account.png",
 			"slug": "account"
 		}
+	],
+	"people": [
+		{
+			"id": "0",
+			"name": "Phillip Parker",
+			"favourite": true,
+			"preference": "Black, no sugar"
+		},
+		{
+			"id": "1",
+			"name": "Conor Byrne",
+			"favourite": true,
+			"preference": "Black, no sugar"
+		}
+	],
+	"pool": [
+		{
+			"id": "0",
+			"name": "user 1",
+			"favourite": true,
+			"preference": "Black, no sugar"
+		},
+		{
+			"id": "1",
+			"name": "user 2",
+			"favourite": true,
+			"preference": "Black, no sugar"
+		}
 	]
 }

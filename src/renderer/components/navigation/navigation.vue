@@ -1,5 +1,5 @@
 <template>
-	<section class="navigation" v-design-mode>
+	<nav class="navigation" v-design-mode>
 		<router-link
 			v-for="element in localData"
 			:to="element.slug"
@@ -11,7 +11,7 @@
 				<img class="navigation__icon" :src="fetchImg(element.icon)"/>
 			</div>
 		</router-link>
-	</section>
+	</nav>
 </template>
 
 <script>

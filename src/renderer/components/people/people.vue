@@ -1,17 +1,17 @@
 <template>
-	<section class="pool">
-		<div class="pool__header">
-			<h3 class="pool__title-one delta">POOL</h3>
+	<section class="people">
+		<div class="people__header">
+			<h3 class="people__title delta">PEOPLE</h3>
 		</div>
-		<draggable :options="options" v-model='pool' @update="onUpdate">
-			<div v-for="element in pool" :key="element.id" class="pool__row">
-				<div class="pool__name">
+		<draggable :options="options" v-model='people'>
+			<div v-for="element in people" :key="element.id" class="people__row">
+				<div class="people__name">
 					{{element.id}} {{element.name}}
 				</div>
-				<div class="pool__preference">
+				<div class="people__preference">
 					{{element.preference}}
 				</div>
-				<div class="pool__favourite">
+				<div class="people__favourite">
 					hey
 				</div>
 			</div>
@@ -23,7 +23,7 @@
 	import {mapState} from 'vuex';
 	import draggable from 'vuedraggable'
 	export default {
-		name: 'pool',
+		name: 'People',
 		props: [''],
 		components: {
 			draggable,
@@ -31,20 +31,17 @@
 		data () {
 			return {
 				options: {
-					group: 'people'
+					group: 'people',
+					clone: true
 				}
 			};
 		},
 		watch: {},
-		methods: {
-			onUpdate (prop) {
-				console.log(prop)
-			}
-		},
+		methods: {},
 		computed: {
-			pool: {
+			people: {
 				get() {
-					return this.$store.state.loadLocalData.data.pool;
+					return this.$store.state.loadLocalData.data.people;
 				},
 				set(value) {
 					console.log(value);
@@ -56,11 +53,14 @@
 </script>
 
 <style lang="scss" type="text/scss">
-	.pool {
-		flex: 1 1 50%;
-		margin-right: em(10);
+	.people {
+		flex: 1 0 50%;
+		/*max-width: 45%;*/
 		&__header {
 			padding: em(10) em(10);
+		}
+		&__title {
+			margin-bottom: 0;
 		}
 		&__row {
 			display: flex;
@@ -75,9 +75,6 @@
 		}
 		&__favourite {
 			margin-left: auto;
-		}
-		&__title-one {
-			margin-bottom: 0!important;
 		}
 	}
 </style>
